@@ -58,7 +58,7 @@
 
             meta = with pkgs.lib; {
               description = "SPDX SBOM generator for Ubuntu/Debian packages";
-              license = licenses.mit;
+              license = licenses.asl20;
             };
           };
 
@@ -80,7 +80,7 @@
 
             meta = with pkgs.lib; {
               description = "Merges Ubuntu and Nix SPDX SBOMs";
-              license = licenses.mit;
+              license = licenses.asl20;
             };
           };
 
@@ -207,7 +207,7 @@
 
               meta = with targetPkgs.lib; {
                 description = "SPDX SBOM generator for Ubuntu/Debian packages (static binary)";
-                license = licenses.mit;
+                license = licenses.asl20;
                 platforms = [ targetSystem ];
               };
             };
