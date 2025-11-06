@@ -350,26 +350,26 @@ func normalizeLicense(license string) string {
 
 	// Check for known SPDX patterns (case-insensitive)
 	replacements := map[string]string{
-		"gpl-2":        "GPL-2.0-only",
-		"gpl-2+":       "GPL-2.0-or-later",
-		"gpl-3":        "GPL-3.0-only",
-		"gpl-3+":       "GPL-3.0-or-later",
-		"lgpl-2":       "LGPL-2.0-only",
-		"lgpl-2+":      "LGPL-2.0-or-later",
-		"lgpl-2.1":     "LGPL-2.1-only",
-		"lgpl-2.1+":    "LGPL-2.1-or-later",
-		"lgpl-3":       "LGPL-3.0-only",
-		"lgpl-3+":      "LGPL-3.0-or-later",
-		"apache-2":     "Apache-2.0",
-		"bsd":          "BSD-3-Clause",
-		"mit/x11":      "MIT",
-		"expat":        "MIT", // Expat is the MIT license
-		"mit-1":        "MIT",
-		"mit-style":    "MIT",
-		"psf":          "Python-2.0",
+		"gpl-2":         "GPL-2.0-only",
+		"gpl-2+":        "GPL-2.0-or-later",
+		"gpl-3":         "GPL-3.0-only",
+		"gpl-3+":        "GPL-3.0-or-later",
+		"lgpl-2":        "LGPL-2.0-only",
+		"lgpl-2+":       "LGPL-2.0-or-later",
+		"lgpl-2.1":      "LGPL-2.1-only",
+		"lgpl-2.1+":     "LGPL-2.1-or-later",
+		"lgpl-3":        "LGPL-3.0-only",
+		"lgpl-3+":       "LGPL-3.0-or-later",
+		"apache-2":      "Apache-2.0",
+		"bsd":           "BSD-3-Clause",
+		"mit/x11":       "MIT",
+		"expat":         "MIT", // Expat is the MIT license
+		"mit-1":         "MIT",
+		"mit-style":     "MIT",
+		"psf":           "Python-2.0",
 		"public-domain": "NOASSERTION", // Not a license
-		"openldap-2.8": "NOASSERTION",  // Not in SPDX list
-		"hylafax":      "NOASSERTION",  // Not in SPDX list
+		"openldap-2.8":  "NOASSERTION", // Not in SPDX list
+		"hylafax":       "NOASSERTION", // Not in SPDX list
 	}
 
 	// Check for exact match first (case-insensitive)
@@ -403,10 +403,10 @@ func normalizeLicense(license string) string {
 		"build-aux",
 		"Portions",
 		"free software",
-		"<",  // Email addresses
-		">",  // Email addresses
-		"'",  // Apostrophes
-		",",  // Commas in descriptions
+		"<", // Email addresses
+		">", // Email addresses
+		"'", // Apostrophes
+		",", // Commas in descriptions
 	}
 
 	for _, pattern := range invalidPatterns {
