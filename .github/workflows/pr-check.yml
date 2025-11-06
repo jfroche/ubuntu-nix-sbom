@@ -48,7 +48,7 @@ jobs:
         run: |
           # Generate a test SBOM (without file checksums for speed)
           # Fail fast if generation fails
-          ./result-ubuntu/bin/ubuntu-sbom --output test-sbom.spdx.json --no-progress
+          ./result-ubuntu/bin/ubuntu-sbom --output test-sbom.spdx.json --progress=false
 
       - name: Validate SPDX document
         run: |

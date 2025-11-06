@@ -78,7 +78,7 @@ jobs:
 
           # Generate a test SBOM (without file checksums for speed)
           # Fail fast if generation fails
-          ./ubuntu-sbom-arm64 --output release-test-sbom.spdx.json --no-progress
+          ./ubuntu-sbom-arm64 --output release-test-sbom.spdx.json --progress=false
 
           echo "Validating SPDX 2.3 JSON document..."
           pyspdxtools -i release-test-sbom.spdx.json --validate
