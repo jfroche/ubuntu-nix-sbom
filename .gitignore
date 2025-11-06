@@ -1,0 +1,28 @@
+# Binaries
+ubuntu-sbom
+sbom-merge
+
+# SBOM outputs
+*.spdx.json
+*-sbom.json
+
+# Go
+*.o
+*.a
+*.so
+go.sum
+
+# Nix
+result
+result-*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
