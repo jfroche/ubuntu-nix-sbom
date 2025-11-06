@@ -350,26 +350,39 @@ func normalizeLicense(license string) string {
 
 	// Check for known SPDX patterns (case-insensitive)
 	replacements := map[string]string{
-		"gpl-2":         "GPL-2.0-only",
-		"gpl-2+":        "GPL-2.0-or-later",
-		"gpl-3":         "GPL-3.0-only",
-		"gpl-3+":        "GPL-3.0-or-later",
-		"lgpl-2":        "LGPL-2.0-only",
-		"lgpl-2+":       "LGPL-2.0-or-later",
-		"lgpl-2.1":      "LGPL-2.1-only",
-		"lgpl-2.1+":     "LGPL-2.1-or-later",
-		"lgpl-3":        "LGPL-3.0-only",
-		"lgpl-3+":       "LGPL-3.0-or-later",
-		"apache-2":      "Apache-2.0",
-		"bsd":           "BSD-3-Clause",
-		"mit/x11":       "MIT",
-		"expat":         "MIT", // Expat is the MIT license
-		"mit-1":         "MIT",
-		"mit-style":     "MIT",
-		"psf":           "Python-2.0",
-		"public-domain": "NOASSERTION", // Not a license
-		"openldap-2.8":  "NOASSERTION", // Not in SPDX list
-		"hylafax":       "NOASSERTION", // Not in SPDX list
+		"gpl-2":                       "GPL-2.0-only",
+		"gpl-2+":                      "GPL-2.0-or-later",
+		"gpl-3":                       "GPL-3.0-only",
+		"gpl-3+":                      "GPL-3.0-or-later",
+		"lgpl-2":                      "LGPL-2.0-only",
+		"lgpl-2+":                     "LGPL-2.0-or-later",
+		"lgpl-2.1":                    "LGPL-2.1-only",
+		"lgpl-2.1+":                   "LGPL-2.1-or-later",
+		"lgpl-3":                      "LGPL-3.0-only",
+		"lgpl-3+":                     "LGPL-3.0-or-later",
+		"apache-2":                    "Apache-2.0",
+		"apache":                      "NOASSERTION", // Too generic without version
+		"bsd":                         "BSD-3-Clause",
+		"mit/x11":                     "MIT",
+		"expat":                       "MIT", // Expat is the MIT license
+		"mit-1":                       "MIT",
+		"mit-style":                   "MIT",
+		"psf":                         "Python-2.0",
+		"public-domain":               "NOASSERTION", // Not a license
+		"openldap-2.8":                "NOASSERTION", // Not in SPDX list
+		"hylafax":                     "NOASSERTION", // Not in SPDX list
+		"ubuntu-font-licence-1.0":     "Ubuntu-Font-1.0",
+		"go":                          "NOASSERTION", // Too generic
+		"epl-1":                       "EPL-1.0",
+		"dom4j":                       "NOASSERTION", // Not in SPDX list
+		"fastcgi":                     "NOASSERTION", // Not in SPDX list
+		"other":                       "NOASSERTION",
+		"eclipse-public-license-v1.0": "EPL-1.0",
+		"edl-1.0":                     "BSD-3-Clause", // EDL is BSD-like
+		"nrl-2-clause":                "NOASSERTION",  // Not in SPDX list
+		"tidy":                        "NOASSERTION",
+		"purdue":                      "NOASSERTION",
+		"mpl-2":                       "MPL-2.0",
 	}
 
 	// Check for exact match first (case-insensitive)
