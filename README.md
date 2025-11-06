@@ -292,7 +292,11 @@ The hooks will automatically format your code when you commit changes.
 
 ## License
 
-MIT
+Apache-2.0
+
+This project is licensed under the Apache License, Version 2.0 - see the [LICENSE](LICENSE) file for details.
+
+The Apache-2.0 license is compatible with [sbomnix](https://github.com/tiiuae/sbomnix) (also Apache-2.0), which this project integrates with for Nix SBOM generation.
 
 ## Contributing
 
