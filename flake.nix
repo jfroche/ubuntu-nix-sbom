@@ -70,7 +70,7 @@
             vendorHash = null;
 
             buildPhase = ''
-              go build -o sbom-merge merge.go
+              go build -o sbom-merge main.go merge.go
             '';
 
             installPhase = ''
