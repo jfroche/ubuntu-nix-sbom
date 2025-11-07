@@ -22,7 +22,7 @@ A comprehensive SBOM (Software Bill of Materials) generator for systems running 
 Clone the repository and enter the development shell:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/supabase/ubuntu-nix-sbom
 cd ubuntu-nix-sbom
 nix develop
 ```
@@ -283,6 +283,28 @@ Both the PR check and release workflows automatically validate SPDX output:
 
 ## Development
 
+### Project Structure
+
+The project follows the standard Go project layout:
+
+```
+.
+├── internal/
+│   └── sbom/
+│       └── types.go           # Shared types and utilities (package sbom)
+├── cmd/
+│   ├── ubuntu-sbom/
+│   │   └── main.go            # Ubuntu SBOM generator binary
+│   └── sbom-merge/
+│       └── main.go            # SBOM merger binary
+├── flake.nix                  # Nix flake configuration
+└── go.mod                     # Go module (github.com/supabase/ubuntu-nix-sbom)
+```
+
+The `internal/` directory is a Go convention that prevents external packages from importing the code, ensuring the shared types remain internal to this project.
+
+### Development Environment
+
 Enter the development shell:
 
 ```bash
@@ -290,17 +312,25 @@ nix develop
 ```
 
 This provides:
-- Go toolchain
+- Go toolchain (with Go modules support)
 - gopls (Go language server)
 - sbomnix
 - Formatting tools (nixfmt, shellcheck, shfmt, gofmt)
 - Pre-commit hooks (automatically installed)
 
+### Building Binaries
+
 Build the Go binaries manually:
 
 ```bash
-go build -o ubuntu-sbom main.go
-go build -o sbom-merge merge.go
+# Build Ubuntu SBOM generator
+go build -o ubuntu-sbom ./cmd/ubuntu-sbom
+
+# Build SBOM merger
+go build -o sbom-merge ./cmd/sbom-merge
+
+# Build both
+go build ./cmd/...
 ```
 
 ### Code Formatting
