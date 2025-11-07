@@ -11,6 +11,36 @@ A comprehensive SBOM (Software Bill of Materials) generator for systems running 
 - **License Detection**: Extracts license information from package metadata
 - **Package URLs (purl)**: Includes purl references for both deb and nix packages
 
+## Quick Run
+
+No installation required! Run directly from GitHub:
+
+### Generate Merged SBOM (Ubuntu + Nix)
+
+```bash
+# Generate combined SBOM for your system
+nix run --extra-experimental-features "nix-command flakes" github:supabase/ubuntu-nix-sbom#sbom-generator -- \
+  --nix-target /nix/var/nix/profiles/system \
+  --output system-sbom.json
+```
+
+### Generate Ubuntu-Only SBOM
+
+```bash
+# Scan only Ubuntu/Debian packages
+nix run --extra-experimental-features "nix-command flakes" github:supabase/ubuntu-nix-sbom#sbom-ubuntu -- \
+  --output ubuntu-sbom.json
+```
+
+### Generate Nix-Only SBOM
+
+```bash
+# Analyze a specific Nix derivation
+nix run --extra-experimental-features "nix-command flakes" github:supabase/ubuntu-nix-sbom#sbom-nix -- \
+  /nix/store/xxx-your-derivation \
+  --output nix-sbom.json
+```
+
 ## Prerequisites
 
 - Nix with flakes enabled
